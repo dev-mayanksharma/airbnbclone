@@ -2,15 +2,13 @@ const express = require('express');
 const rootDir = require('./../utils/rootpath');
 const hostRouter = express.Router();
 const path = require('path');
-const {getAddHome} = require("../controller/home");
-const {addHome} = require("../controller/add-home");
-const {registeredHomes} = require('../controller/add-home');
-hostRouter.get('/host/add-home',getAddHome);
+const home = require('../controller/home');
+hostRouter.get('/host/add-home',home.getAddHome);
 
 
 
 
-hostRouter.post('/host/add-home',addHome)
+hostRouter.post('/host/add-home',home.addHome)
 
 
 hostRouter.get('/retry',(req,res,next)=>{
@@ -22,4 +20,4 @@ hostRouter.get('/retry',(req,res,next)=>{
 
 
 exports.hostRouter = hostRouter;
-exports.registeredHomes = registeredHomes;
+exports.registeredHomes = home.registeredHomes;
