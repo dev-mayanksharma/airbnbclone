@@ -1,5 +1,5 @@
 const express = require('express');
-
+const rootDir = require('./../utils/rootpath');
 const hostRouter = express.Router();
 const path = require('path');
 
@@ -33,13 +33,11 @@ hostRouter.post('/host/add-home',(req,res,next)=>{
 
     console.log(` ${req.body.housename} is registered  and owner is ${req.body.mail}`);
     registeredHomes.push({
-     [req.body.housename]:[req.body.mail]
+     houseName:req.body.housename,
+     mail:req.body.mail
     });
-
-    res.send(`<h1>your house is registered sucessfully  </h1>
-        <a href="/">go to home</a>
-
-        `)
+    console.log('kya code yha tk fta?',registeredHomes);
+    res.sendFile(path.join(rootDir,'views','registered.html'));  
 })
 
 
