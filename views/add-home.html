@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Home | Airbnb</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f7f7f7;
+        }
+
+        .navbar{
+            display:flex;
+            gap:15px;
+            padding:20px 40px;
+            background:white;
+            border-bottom:1px solid #e5e5e5;
+        }
+
+        .nav-btn{
+            text-decoration:none;
+            background:#ff385c;
+            color:white;
+            padding:12px 18px;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .nav-btn:hover{
+            background:#e31c5f;
+        }
+
+        h1{
+            text-align:center;
+            margin-top:40px;
+            color:#222;
+        }
+
+        .form-container{
+            width:400px;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:16px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        form{
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        input[type="text"],
+        input[type="email"]{
+            padding:12px;
+            border:1px solid #ddd;
+            border-radius:8px;
+            font-size:16px;
+        }
+
+        input[type="submit"]{
+            background:#ff385c;
+            color:white;
+            border:none;
+            padding:12px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+        }
+
+        input[type="submit"]:hover{
+            background:#e31c5f;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/" class="nav-btn">Home</a>
+        <a href="/user/select-home" class="nav-btn">View Registered Homes</a>
+    </div>
+
+    <header>
+        <h1>Register Your Home</h1>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <form action="/host/add-home" method="POST">
+
+                <input
+                    type="text"
+                    name="housename"
+                    placeholder="Enter the name of your house"
+                />
+
+                <input
+                    type="email"
+                    name="mail"
+                    placeholder="Enter your email"
+                />
+
+                <input type="submit" value="Register Home"/>
+
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

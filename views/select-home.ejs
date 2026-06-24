@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Homes</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, sans-serif;
+            background:#f7f7f7;
+        }
+
+        .navbar{
+            background:white;
+            padding:20px 40px;
+            border-bottom:1px solid #e5e5e5;
+        }
+
+        .navbar a{
+            text-decoration:none;
+            background:#ff385c;
+            color:white;
+            padding:12px 18px;
+            border-radius:8px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .navbar a:hover{
+            background:#e31c5f;
+        }
+
+        h1{
+            text-align:center;
+            color:#222;
+            margin:40px 0;
+            font-size:2.5rem;
+        }
+
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:30px;
+            padding:20px 40px;
+        }
+
+        .card{
+            background:white;
+            width:320px;
+            padding:25px;
+            border-radius:16px;
+            box-shadow:0 4px 12px rgba(0,0,0,0.08);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card h2{
+            color:#222;
+            margin-bottom:12px;
+        }
+
+        .card p{
+            color:#717171;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="/host/add-home">Register Your Home</a>
+    </div>
+
+    <h1>Registered Homes</h1>
+
+    <div class="container">
+
+        <% for(let home of registeredHomes){ %>
+
+            <div class="card">
+                <h2><%= home.houseName %></h2>
+                <p><%= home.mail %></p>
+            </div>
+
+        <% } %>
+
+    </div>
+
+</body>
+</html>
