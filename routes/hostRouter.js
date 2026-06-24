@@ -34,7 +34,9 @@ hostRouter.post('/host/add-home',(req,res,next)=>{
     console.log(` ${req.body.housename} is registered  and owner is ${req.body.mail}`);
     registeredHomes.push({
      houseName:req.body.housename,
-     mail:req.body.mail
+     mail:req.body.mail,
+     location:req.body.location,
+     price:req.body.price
     });
     console.log('kya code yha tk fta?',registeredHomes);
     res.sendFile(path.join(rootDir,'views','registered.html'));  

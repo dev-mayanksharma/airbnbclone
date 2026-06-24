@@ -54,11 +54,15 @@
 
         .card{
             background:white;
-            width:320px;
+            width:350px;
             padding:25px;
             border-radius:16px;
             box-shadow:0 4px 12px rgba(0,0,0,0.08);
             transition:0.3s;
+
+            display:flex;
+            flex-direction:column;
+            gap:12px;
         }
 
         .card:hover{
@@ -67,11 +71,21 @@
 
         .card h2{
             color:#222;
-            margin-bottom:12px;
+            font-size:24px;
+            margin-bottom:10px;
+            padding-bottom:10px;
+            border-bottom:1px solid #e5e5e5;
         }
 
-        .card p{
+        .info{
             color:#717171;
+            font-size:16px;
+            line-height:1.6;
+        }
+
+        .label{
+            color:#222;
+            font-weight:bold;
         }
     </style>
 
@@ -89,8 +103,24 @@
         <% for(let home of registeredHomes){ %>
 
             <div class="card">
+
                 <h2><%= home.houseName %></h2>
-                <p><%= home.mail %></p>
+
+                <div class="info">
+                    <span class="label">Email:</span>
+                    <%= home.mail %>
+                </div>
+
+                <div class="info">
+                    <span class="label">Location:</span>
+                    <%= home.location %>
+                </div>
+
+                <div class="info">
+                    <span class="label">Price:</span>
+                    ₹<%= home.price %>
+                </div>
+
             </div>
 
         <% } %>
